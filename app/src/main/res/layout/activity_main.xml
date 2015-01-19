@@ -1,0 +1,60 @@
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://robobinding.org/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/layout_grid_main_activity">
+
+    <TextView android:text="Nick Name" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nickname_text"
+        />
+
+    <EditText
+        android:layout_width="239dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/nickname"
+        android:layout_row="0"
+        android:text="Testing"
+        android:layout_column="2"
+        android:hint="nickname"
+        bind:text="${nickname}"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Password"
+        android:id="@+id/text_view"
+        android:layout_row="1"
+        android:layout_column="0"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/password"
+        android:layout_row="1"
+        android:layout_column="2"
+        android:hint="Password"
+        bind:text="${password}"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/login_button"
+        android:layout_row="3"
+        android:layout_column="0"
+        bind:onClick="submitLogin"
+        bind:enabled="{buttonLoginEnabled}"/>
+
+</GridLayout>
